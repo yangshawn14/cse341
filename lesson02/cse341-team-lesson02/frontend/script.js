@@ -11,6 +11,7 @@ const getData = async () => {
 };
 
 function displayAllData(data) {
+  console.log('Received Data:', data); // Add this line
   displayProfessionalName(data.professionalName);
   displayImage(data.base64Image);
   displayPrimaryDescription(data);
