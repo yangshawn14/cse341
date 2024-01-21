@@ -1,10 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
+const MongoClient = require("mongodb").MongoClient;
 const contactsRoutes = require('./routes/contacts');
 
 const app = express();
-const port = 3000;
+const port = 8080;
 
 app.use(bodyParser.json());
 app.use((req, res, next) => {
@@ -14,9 +15,7 @@ app.use((req, res, next) => {
 
 app.use('/', contactsRoutes);
 
-app.listen(process.env.PORT || port, () => {
-  console.log('Web Server is listening at port ' + (process.env.PORT || port));
-});
+
 
 mongodb.initDb((err, mongodb) => {
   if (err) {
