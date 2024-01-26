@@ -20,6 +20,7 @@ const getAll = async (req, res, next) => {
 
 const getSingle = async (req, res, next) => {
   const idString = req.params.id;
+  console.log('Received id parameter:', idString);
 
   try {
     const userId = new ObjectId(idString);

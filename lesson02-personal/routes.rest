@@ -1,5 +1,15 @@
+// Localhost Test
+###
 GET http://localhost:8080/contacts
 ###
+GET http://localhost:8080/contacts/65ac69f8c9928e61c47be0e3
+###
+GET http://localhost:8080/contacts/65ac69f8c9928e61c47be0e2
+###
+GET http://localhost:8080/contacts/65ac69f8c9928e61c47be0e1
+###
+
+// Production Test 
 GET https://connect-mongodb.onrender.com
 ###
 GET https://connect-mongodb.onrender.com/65ac69f8c9928e61c47be0e3
@@ -7,3 +17,4 @@ GET https://connect-mongodb.onrender.com/65ac69f8c9928e61c47be0e3
 GET https://connect-mongodb.onrender.com/65ac69f8c9928e61c47be0e2
 ###
 GET https://connect-mongodb.onrender.com/65ac69f8c9928e61c47be0e1
+###
