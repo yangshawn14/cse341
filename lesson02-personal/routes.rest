@@ -1,20 +1,39 @@
 // Localhost Test
-###
+
+### Get all contacts
 GET http://localhost:8080/contacts
-###
+
+### Get by ID
 GET http://localhost:8080/contacts/65ac69f8c9928e61c47be0e3
 ###
 GET http://localhost:8080/contacts/65ac69f8c9928e61c47be0e2
 ###
 GET http://localhost:8080/contacts/65ac69f8c9928e61c47be0e1
-###
+
+### Create new contact
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+    "firstName": "Nick",
+    "lastName": "Yang",
+    "email": "nickyang@email.com",
+    "favoriteColor": "Green",
+    "birthday": "10/09/00" 
+}
+
 
 // Production Test 
+
+### Get all contacts
 GET https://connect-mongodb.onrender.com
-###
+
+### Get by ID
 GET https://connect-mongodb.onrender.com/65ac69f8c9928e61c47be0e3
 ###
 GET https://connect-mongodb.onrender.com/65ac69f8c9928e61c47be0e2
 ###
 GET https://connect-mongodb.onrender.com/65ac69f8c9928e61c47be0e1
-###
+
+### Create new contact
+POST 
