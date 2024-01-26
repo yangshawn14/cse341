@@ -54,4 +54,54 @@ const createContact = async (req, res, next) => {
   }
 };
 
-module.exports = { getAll, getSingle, createContact };
+// Update contact info
+const updateContact = async (req, res, next) => {
+  const contactId = new ObjectId(req.params.id);
+  const newContactData = req.body; // Assuming the request body contains the new contact data
+
+  try {
+    const result = await mongodb
+      .getDb()
+      .db()
+      .collection('contacts')
+      .replaceOne(
+        { _id: contactId },
+        newContactData
+      );
+
+    if (result.modifiedCount === 1) {
+      res.status(200).json({ message: 'Contact replaced successfully' });
+    } else {
+      res.status(404).json({ message: 'Contact not found' });
+    }
+  } catch (error) {
+    console.error('Error replacing contact:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+};
+
+// Delete contact
+const deleteContact = async (req, res, next) => {
+  try {
+    const contactId = new ObjectId(req.params.id);
+
+    const result = await mongodb
+      .getDb()
+      .db()
+      .collection('contacts')
+      .deleteOne({ _id: contactId });
+
+    if (result.deletedCount === 1) {
+      res.status(200).json({ message: 'Contact replaced successfully' });
+    } else {
+      res.status(404).json({ message: 'Contact not found' });
+    }
+  } catch (error) {
+    console.error('Error deleting contact:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+};
+
+
+
+module.exports = { getAll, getSingle, createContact, updateContact, deleteContact };

@@ -9,6 +9,8 @@ GET http://localhost:8080/contacts/65ac69f8c9928e61c47be0e3
 GET http://localhost:8080/contacts/65ac69f8c9928e61c47be0e2
 ###
 GET http://localhost:8080/contacts/65ac69f8c9928e61c47be0e1
+###
+GET http://localhost:8080/contacts/65b315d155960690ee55e7b0
 
 ### Create new contact
 POST http://localhost:8080/contacts
@@ -21,6 +23,20 @@ Content-Type: application/json
     "favoriteColor": "Green",
     "birthday": "10/09/00" 
 }
+
+### Update contact
+PUT http://localhost:8080/contacts/65b315d155960690ee55e7b0
+Content-Type: application/json
+
+{
+    "firstName": "Nick",
+    "lastName": "Yang",
+    "email": "nickyang@email.com",
+    "favoriteColor": "Red",
+    "birthday": "10/09/00" 
+}
+
+### Delete contact
 
 
 // Production Test 
@@ -37,3 +53,6 @@ GET https://connect-mongodb.onrender.com/65ac69f8c9928e61c47be0e1
 
 ### Create new contact
 POST 
+### Update contact
+
+### Delete contact
