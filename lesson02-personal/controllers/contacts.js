@@ -92,7 +92,7 @@ const deleteContact = async (req, res, next) => {
       .deleteOne({ _id: contactId });
 
     if (result.deletedCount === 1) {
-      res.status(200).json({ message: 'Contact replaced successfully' });
+      res.status(200).json({ message: 'Contact deleted successfully' });
     } else {
       res.status(404).json({ message: 'Contact not found' });
     }

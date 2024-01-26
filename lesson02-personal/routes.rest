@@ -37,7 +37,8 @@ Content-Type: application/json
 }
 
 ### Delete contact
-
+DELETE http://localhost:8080/contacts/65b329573427cc822e5de37a
+Content-Type: application/json
 
 // Production Test 
 
@@ -52,7 +53,29 @@ GET https://connect-mongodb.onrender.com/65ac69f8c9928e61c47be0e2
 GET https://connect-mongodb.onrender.com/65ac69f8c9928e61c47be0e1
 
 ### Create new contact
-POST 
+POST https://connect-mongodb.onrender.com
+Content-Type: application/json
+
+{
+    "firstName": "Nick",
+    "lastName": "Yang",
+    "email": "nickyang@email.com",
+    "favoriteColor": "Red",
+    "birthday": "10/09/00" 
+}
+
 ### Update contact
+PUT https://connect-mongodb.onrender.com/65b315d155960690ee55e7b0
+Content-Type: application/json
+
+{
+    "firstName": "Nick",
+    "lastName": "Yang",
+    "email": "nickyang@email.com",
+    "favoriteColor": "Red",
+    "birthday": "10/09/00" 
+}
 
 ### Delete contact
+DELETE https://connect-mongodb.onrender.com/65b315d155960690ee55e7b0
+Content-Type: application/json
