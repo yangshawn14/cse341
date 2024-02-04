@@ -66,7 +66,13 @@ const createContact = async (req, res, next) => {
 // Update contact info
 const updateContact = async (req, res, next) => {
   const contactId = new ObjectId(req.params.id);
-  const newContactData = req.body; // Assuming the request body contains the new contact data
+  const newContactData = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday
+  };
 
   try {
     const result = await mongodb
