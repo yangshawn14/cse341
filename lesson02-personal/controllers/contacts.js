@@ -19,7 +19,11 @@ const getSingle = async (req, res, next) => {
     const userId = new ObjectId(idString);
     console.log('Converted ObjectId:', userId);
 
-    const result = await mongodb.getDb().db().collection('contacts').find({ _id: userId });
+    const result = await mongodb
+      .getDb()
+      .db()
+      .collection('contacts')
+      .find({ _id: userId });
     result.toArray().then((lists) => {
       res.setHeader('Content-Type', 'application/json');
       res.status(200).json(lists[0]);
@@ -42,11 +46,16 @@ const createContact = async (req, res, next) => {
       lastName,
       email,
       favoriteColor,
-      birthday
+      birthday,
     });
 
     // Send a success response
-    res.status(201).json({ message: 'Contact created successfully', contactId: result.insertedId });
+    res
+      .status(201)
+      .json({
+        message: 'Contact created successfully',
+        contactId: result.insertedId,
+      });
   } catch (error) {
     // Handle any errors
     console.error('Error creating contact:', error);
@@ -64,10 +73,7 @@ const updateContact = async (req, res, next) => {
       .getDb()
       .db()
       .collection('contacts')
-      .replaceOne(
-        { _id: contactId },
-        newContactData
-      );
+      .replaceOne({ _id: contactId }, newContactData);
 
     if (result.modifiedCount === 1) {
       res.status(200).json({ message: 'Contact replaced successfully' });
@@ -102,6 +108,10 @@ const deleteContact = async (req, res, next) => {
   }
 };
 
-
-
-module.exports = { getAll, getSingle, createContact, updateContact, deleteContact };
+module.exports = {
+  getAll,
+  getSingle,
+  createContact,
+  updateContact,
+  deleteContact,
+};

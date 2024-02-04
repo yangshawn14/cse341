@@ -65,15 +65,15 @@ Content-Type: application/json
 }
 
 ### Update contact
-PUT https://connect-mongodb.onrender.com/contacts/65b333d226fc274459febfc3
+PUT https://connect-mongodb.onrender.com/contacts/65ac69f8c9928e61c47be0e3
 Content-Type: application/json
 
 {
-    "firstName": "Nicolai",
+    "firstName": "Troy",
     "lastName": "Yang",
-    "email": "nickyang@email.com",
-    "favoriteColor": "Green",
-    "birthday": "10/09/00" 
+    "email": "troyyang@email.com",
+    "favoriteColor": "Orange",
+    "birthday": "12/13/23" 
 }
 
 ### Delete contact
