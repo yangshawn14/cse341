@@ -5,7 +5,7 @@ const doc = {
         version: '1.0.0',
     },
     host: 'connect-mongodb.onrender.com',
-    schemes: ['http'],
+    schemes: ['https'],
 };
 
 const outputFile = './swagger.json';
