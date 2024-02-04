@@ -4,7 +4,7 @@ const doc = {
         description: 'This is my Contacts API',
         version: '1.0.0',
     },
-    host: 'https://connect-mongodb.onrender.com',
+    host: 'connect-mongodb.onrender.com',
     schemes: ['http'],
 };
 
