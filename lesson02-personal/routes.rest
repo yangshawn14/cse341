@@ -57,11 +57,11 @@ POST https://connect-mongodb.onrender.com/contacts
 Content-Type: application/json
 
 {
-    "firstName": "Nick",
+    "firstName": "Grace",
     "lastName": "Yang",
-    "email": "nickyang@email.com",
-    "favoriteColor": "Red",
-    "birthday": "10/09/00" 
+    "email": "graceyang@email.com",
+    "favoriteColor": "Purple",
+    "birthday": "12/27/07" 
 }
 
 ### Update contact
